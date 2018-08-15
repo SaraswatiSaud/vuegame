@@ -23,23 +23,7 @@ export default {
   data () {
     return {
       newUser: {},
-      users: [
-        {
-          name: 'Saraswati Saud',
-          email: 'saraswati.saud@gmail.com',
-          contacted: false
-        },
-        {
-          name: 'Shreejana Poudel',
-          email: 'shreejana.poudel@gmail.com',
-          contacted: false
-        },
-        {
-          name: 'Sheela Shrestha',
-          email: 'sheela.shrestha@gmail.com',
-          contacted: false
-        }
-      ]
+      users: []
     }
   },
   methods: {
@@ -54,6 +38,12 @@ export default {
     deleteUser: function (user) {
       this.users.splice(this.users.indexOf(user), 1)
     }
+  },
+  created: function () {
+    this.$http.get('https://jsonplaceholder.typicode.com/users')
+      .then(function(response) {
+        this.users = response.data
+      }) 
   }
 }
 </script>
