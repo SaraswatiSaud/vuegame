@@ -5,7 +5,7 @@
     <h1>{{title}}</h1>
     <p>{{user.firstName}}</p>
     <p v-text="user.lastName"></p>
-    <p v-if="showName">User is showing</p>
+    <p v-if="showName" v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }">User is showing</p>
     <p v-else>Nobody is listing</p>
     <ul>
       <li v-for="item in items">{{item.title}}</li>
@@ -13,7 +13,7 @@
     <button v-on:click="greet('Hello World')">click me</button>
     <input type="text" v-on:keyup="pressKey" v-on:keyup.enter="enterHit" />
     <br /><br />
-    <div>
+    <div v-bind:class="alertObject">
       <label>First Name:</label><input type="text" v-model="user.firstName">
       <br />
       <label>Last Name:</label><input type="text" v-model="user.lastName">
@@ -44,7 +44,13 @@ export default {
         {title: 'Title One'},
         {title: 'Title Two'},
         {title: 'Title Three'}
-      ]
+      ],
+      alertObject: {
+        alert: true
+      },
+      bgColor: '#eee',
+      bgWidth: '100%',
+      bgHeight: '30px'
     }
   },
   methods: {
@@ -65,3 +71,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .alert {
+    border: 1px solid black;
+  }
+</style>
