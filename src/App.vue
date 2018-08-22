@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<!-- <test></test> -->
-		<users></users>
+		<!-- <users></users> -->
 	</div>
 </template>
 
@@ -9,11 +9,12 @@
 import Test from './components/test'
 import Users from './components/users'
 import Audio from './components/audio'
+import Udemy from './components/udemy'
 
 export default {
 	name: 'App',
 	components: {
-		Test, Users, Audio
+		Test, Users, Audio, Udemy
 	}
 }
 </script>

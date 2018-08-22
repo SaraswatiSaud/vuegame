@@ -1,6 +1,5 @@
 <template>
 	<div id="app1">
-			Recording
 			<audio-recorder
 				upload-url="some url"
 				:attempts="3"

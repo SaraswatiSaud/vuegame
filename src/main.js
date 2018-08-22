@@ -8,6 +8,7 @@ import App from './App'
 import Users from './components/Users'
 import Test from './components/Test'
 import Audio from './components/Audio'
+import Udemy from './components/Udemy'
 
 Vue.use(vueResource)
 Vue.use(VueRouter)
@@ -19,7 +20,8 @@ const router = new VueRouter({
 	routes: [
 		{path: '/', component: Users},
 		{path: '/test', component: Test},
-		{path: '/audio', component: Audio}
+		{path: '/audio', component: Audio},
+		{path: '/udemy', component: Udemy}
 	]
 })
 
@@ -31,6 +33,7 @@ new Vue({
 				<li><router-link to="/">Users</router-link></li>
 				<li><router-link to="/test">Test</router-link></li>
 				<li><router-link to="/audio">Audio</router-link></li>
+				<li><router-link to="/udemy">Udemy</router-link></li>
 			</ul>
 			<router-view></router-view>
 		</div>
